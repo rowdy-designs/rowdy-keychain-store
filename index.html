@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rowdy Keychains — Custom Keychain Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--acc:#10b981;--bg:#040a08;--panel:#06120d;--mid:#081a12;--text:#e8f2ed;--border:rgba(16,185,129,0.12);--glow:0 0 40px rgba(16,185,129,0.18);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -19,24 +19,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 7vw;display:
 .nav-cart{position:relative;font-family:'Nunito',sans-serif;font-size:10px;letter-spacing:3px;color:var(--acc);text-decoration:none;display:flex;align-items:center;gap:6px;}
 .nav-cart .cart-count{background:var(--acc);color:var(--bg);font-size:9px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
 @media(max-width:768px){.nav-links{display:none;}}
-#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 7vw 9vh;overflow:hidden;}
-.hero-img{position:absolute;inset:0;background-image:url('https://images.pexels.com/photos/37232391/pexels-photo-37232391.jpeg?auto=compress&cs=tinysrgb&w=1600');background-size:cover;background-position:center 40%;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,10,8,0.97) 0%,rgba(4,10,8,0.55) 50%,rgba(4,10,8,0.22) 100%),linear-gradient(to right,rgba(4,10,8,0.65) 0%,transparent 65%);}
-.hero-content{position:relative;z-index:2;max-width:780px;}
-.hero-eyebrow{font-family:'Nunito',sans-serif;font-size:clamp(10px,1.1vw,13px);font-weight:600;letter-spacing:7px;color:var(--acc);text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:14px;animation:fadeUp .8s ease both;}
-.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--acc);}
-.hero-title{font-family:'Crimson Text',serif;font-size:clamp(68px,12vw,170px);line-height:.87;letter-spacing:2px;color:#fff;animation:fadeUp .8s .12s ease both;}
-.hero-title span{color:var(--acc);display:block;}
-.hero-sub{margin-top:2rem;font-size:clamp(13px,1.4vw,16px);color:rgba(232,242,237,0.48);max-width:420px;line-height:1.75;animation:fadeUp .8s .24s ease both;}
-.hero-cta{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .36s ease both;}
-.hero-badge{position:absolute;top:50%;right:7vw;transform:translateY(-50%);z-index:2;width:clamp(110px,13vw,155px);height:clamp(110px,13vw,155px);border-radius:50%;border:1px solid rgba(16,185,129,0.18);display:flex;align-items:center;justify-content:center;animation:spin 22s linear infinite;}
-.hero-badge svg{position:absolute;width:100%;height:100%;}
-.hero-badge-inner{font-family:'Crimson Text',serif;font-size:clamp(20px,2.8vw,34px);color:var(--acc);letter-spacing:2px;animation:spinReverse 22s linear infinite;}
-@keyframes spin{from{transform:translateY(-50%) rotate(0deg);}to{transform:translateY(-50%) rotate(360deg);}}
-@keyframes spinReverse{from{transform:rotate(0deg);}to{transform:rotate(-360deg);}}
-@media(max-width:768px){.hero-badge{display:none;}}
-.scroll-hint{position:absolute;bottom:2.5rem;right:7vw;z-index:2;font-family:'Nunito',sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(16,185,129,0.28);writing-mode:vertical-rl;display:flex;align-items:center;gap:10px;animation:fadeUp 1s .6s ease both;}
-.scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--acc),transparent);opacity:.35;}
+#hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 7vw;overflow:hidden;gap:4vw;}
+@media(max-width:768px){#hero{grid-template-columns:1fr;text-align:center;padding-top:6rem;}}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(4,10,8,0.95) 0%,rgba(4,10,8,0.7) 50%,rgba(4,10,8,0.3) 100%);}
+.hero-bg-img{position:absolute;inset:0;background-image:url('https://images.pexels.com/photos/37232391/pexels-photo-37232391.jpeg?auto=compress&cs=tinysrgb&w=1600');background-size:cover;background-position:center;}
+.hero-content{position:relative;z-index:2;}
+.hero-eyebrow{font-family:'Nunito',sans-serif;font-size:clamp(10px,1.1vw,13px);font-weight:600;letter-spacing:7px;color:var(--acc);text-transform:uppercase;margin-bottom:1rem;animation:fadeUp .8s ease both;}
+.hero-title{font-family:'Crimson Text',serif;font-size:clamp(48px,8vw,110px);line-height:1;color:#fff;animation:fadeUp .8s .12s ease both;}
+.hero-title span{color:var(--acc);}
+.hero-sub{margin-top:1.5rem;font-size:clamp(13px,1.4vw,16px);color:rgba(232,242,237,0.5);max-width:400px;line-height:1.75;animation:fadeUp .8s .24s ease both;}
+.hero-cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .36s ease both;}
+.hero-visual{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-product{width:clamp(250px,35vw,450px);aspect-ratio:1;border-radius:20px;background-image:url('https://images.pexels.com/photos/16163786/pexels-photo-16163786.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;border:2px solid rgba(16,185,129,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);animation:floatIn 1s .3s ease both;}
+@keyframes floatIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:768px){.hero-visual{display:none;}}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;font-family:'Nunito',sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(16,185,129,0.35);display:flex;flex-direction:column;align-items:center;gap:8px;}
+.scroll-hint::after{content:'';width:1px;height:30px;background:linear-gradient(to bottom,var(--acc),transparent);}
 .btn-primary{padding:14px 36px;background:var(--acc);color:var(--bg);font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,box-shadow .2s,transform .15s;display:inline-block;border-radius:6px;}
 .btn-primary:hover{background:#fff;box-shadow:var(--glow);transform:translateY(-2px);}
 .btn-outline{padding:14px 36px;background:transparent;color:var(--acc);font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(16,185,129,0.28);cursor:pointer;transition:border-color .2s,color .2s,transform .15s;display:inline-block;border-radius:6px;}
@@ -50,25 +49,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 7vw;display:
 .sec-label{font-family:'Nunito',sans-serif;font-size:10px;font-weight:600;letter-spacing:7px;color:var(--acc);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:14px;}
 .sec-label::before{content:'';width:22px;height:1px;background:var(--acc);}
 .sec-title{font-family:'Crimson Text',serif;font-size:clamp(44px,7vw,96px);line-height:.9;letter-spacing:1px;margin-bottom:1.5rem;}
-/* Store grid */
+/* Store — horizontal row layout */
 #store{background:var(--panel);border-top:1px solid var(--border);}
-.store-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;}
-@media(max-width:1000px){.store-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:560px){.store-grid{grid-template-columns:1fr;}}
-.product-card{background:var(--mid);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .3s ease,border-color .3s ease;}
-.product-card:hover{transform:translateY(-4px);border-color:rgba(16,185,129,0.35);}
-.product-img{aspect-ratio:1;background-size:cover;background-position:center;background-color:var(--bg);}
-.product-info{padding:1.2rem;}
-.product-name{font-family:'Nunito',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:.35rem;}
-.product-variant{font-size:11px;color:rgba(232,242,237,0.38);margin-bottom:.75rem;}
-.product-price{font-family:'Nunito',sans-serif;font-size:22px;font-weight:600;color:var(--acc);}
-.product-price small{font-size:12px;color:rgba(232,242,237,0.28);font-weight:400;}
-.product-actions{display:flex;gap:.5rem;margin-top:.75rem;}
-.product-actions select{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:'Nunito',sans-serif;font-size:11px;padding:8px 10px;text-transform:uppercase;letter-spacing:1px;outline:none;}
-.product-actions .btn-add{padding:8px 16px;background:var(--acc);color:var(--bg);border:none;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.store-list{display:flex;flex-direction:column;gap:1rem;margin-top:3rem;}
+.product-card{display:grid;grid-template-columns:200px 1fr auto;gap:1.5rem;background:var(--mid);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .3s ease,border-color .3s ease;padding:1rem;align-items:center;}
+@media(max-width:700px){.product-card{grid-template-columns:1fr;text-align:center;}}
+.product-card:hover{transform:translateX(4px);border-color:rgba(16,185,129,0.4);}
+.product-img{aspect-ratio:1;background-size:cover;background-position:center;background-color:var(--bg);border-radius:8px;max-width:200px;}
+.product-info{display:flex;flex-direction:column;gap:.35rem;}
+.product-name{font-family:'Nunito',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#fff;}
+.product-variant{font-size:12px;color:rgba(232,242,237,0.38);}
+.product-price{font-family:'Crimson Text',serif;font-size:24px;font-weight:700;color:var(--acc);}
+.product-price small{font-size:13px;color:rgba(232,242,237,0.28);font-weight:400;}
+.product-actions{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;}
+.product-actions select{background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:'Nunito',sans-serif;font-size:11px;padding:8px 12px;text-transform:uppercase;letter-spacing:1px;outline:none;border-radius:4px;width:140px;}
+.product-actions .btn-add{padding:8px 20px;background:var(--acc);color:var(--bg);border:none;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:background .2s;width:140px;}
 .product-actions .btn-add:hover{background:#fff;}
-/* Customizer */
-#customizer{background:var(--bg);}
+@media(max-width:700px){.product-actions{flex-direction:row;align-items:center;justify-content:center;}.product-actions select,.product-actions .btn-add{width:auto;}}
 .customizer-layout{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start;}
 @media(max-width:780px){.customizer-layout{grid-template-columns:1fr;}}
 .customizer-preview{aspect-ratio:1;background:var(--mid);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;}
@@ -175,21 +172,17 @@ footer{background:var(--panel);border-top:1px solid var(--border);padding:4rem 7
 </nav>
 
 <section id="hero">
-  <div class="hero-img"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-bg"><div class="hero-bg-img"></div></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Production Tier</p>
-    <h1 class="hero-title">Custom<span>Keychains</span></h1>
-    <p class="hero-sub">Design personalized keychains with your text, logo, or artwork. Online customizer, secure Stripe checkout, and order tracking — all included.</p>
+    <h1 class="hero-title">Custom<br><span>Keychains</span></h1>
+    <p class="hero-sub">Handcrafted personalized keychains. Design yours with custom text, materials, and finishes. Secure checkout and order tracking included.</p>
     <div class="hero-cta">
       <a href="store.html" class="btn-primary">Shop Now</a>
       <a href="designer.html" class="btn-outline">Customize Yours</a>
     </div>
   </div>
-  <div class="hero-badge">
-    <svg viewBox="0 0 150 150"><defs><path id="cp" d="M75,75 m-55,0 a55,55 0 1,1 110,0 a55,55 0 1,1 -110,0"/></defs><text font-family="Barlow Condensed,sans-serif" font-size="10.5" font-weight="600" letter-spacing="3" fill="#10b981"><textPath href="#cp">PRODUCTION · CUSTOM · STORE · </textPath></text></svg>
-    <span class="hero-badge-inner">RK</span>
-  </div>
+  <div class="hero-visual"><div class="hero-product"></div></div>
   <div class="scroll-hint">Scroll</div>
 </section>
 

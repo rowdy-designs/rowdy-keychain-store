@@ -167,8 +167,8 @@ footer{background:var(--panel);border-top:1px solid var(--border);padding:4rem 7
 <nav>
   <a class="nav-brand" href="index.html"><em>Rowdy</em> Keychains</a>
   <ul class="nav-links">
-    <li><a href="index.html" style="color:var(--acc);">Home</a></li>
-    <li><a href="store.html">Shop</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="store.html" style="color:var(--acc);">Shop</a></li>
     <li><a href="designer.html">Designer</a></li>
     <li><a href="cart.html">Cart</a></li>
     <li><a href="checkout.html">Checkout</a></li>
@@ -178,29 +178,59 @@ footer{background:var(--panel);border-top:1px solid var(--border);padding:4rem 7
   <a class="nav-cart" href="#cart"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.1 5.2A1 1 0 006 20h11a1 1 0 00.9-1.4L17 13M9 23a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z"/></svg> Cart <span class="cart-count">3</span></a>
 </nav>
 
-<section id="hero">
-  <div class="hero-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Production Tier</p>
-    <h1 class="hero-title">Custom<span>Keychains</span></h1>
-    <p class="hero-sub">Design personalized keychains with your text, logo, or artwork. Online customizer, secure Stripe checkout, and order tracking — all included.</p>
-    <div class="hero-cta">
-      <a href="#store" class="btn-primary">Shop Now</a>
-      <a href="#customizer" class="btn-outline">Customize Yours</a>
+<section id="store" class="sec">
+  <div class="reveal"><p class="sec-label">Shop</p><h2 class="sec-title">The<br>Collection</h2></div>
+  <div class="store-grid">
+    <div class="product-card reveal d1">
+      <div class="product-img" style="background-image:url('https://images.pexels.com/photos/12822478/pexels-photo-12822478.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+      <div class="product-info">
+        <div class="product-name">Classic Acrylic</div>
+        <div class="product-variant">Clear · Gloss Finish</div>
+        <div class="product-price">$12<small>.99</small></div>
+        <div class="product-actions">
+          <select><option>Rectangle</option><option>Circle</option><option>Heart</option><option>Star</option></select>
+          <button class="btn-add" onclick="this.textContent='Added ✓';this.style.background='#22c55e';setTimeout(()=>{this.textContent='Add';this.style.background=''},2000)">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card reveal d2">
+      <div class="product-img" style="background-image:url('https://images.pexels.com/photos/11219583/pexels-photo-11219583.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+      <div class="product-info">
+        <div class="product-name">Leather Strap</div>
+        <div class="product-variant">Genuine Leather · Debossed</div>
+        <div class="product-price">$18<small>.99</small></div>
+        <div class="product-actions">
+          <select><option>Brown</option><option>Black</option><option>Tan</option></select>
+          <button class="btn-add" onclick="this.textContent='Added ✓';this.style.background='#22c55e';setTimeout(()=>{this.textContent='Add';this.style.background=''},2000)">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card reveal d3">
+      <div class="product-img" style="background-image:url('https://images.pexels.com/photos/11489561/pexels-photo-11489561.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+      <div class="product-info">
+        <div class="product-name">Metal Engraved</div>
+        <div class="product-variant">Stainless Steel · Laser Etched</div>
+        <div class="product-price">$22<small>.99</small></div>
+        <div class="product-actions">
+          <select><option>Silver</option><option>Gold</option><option>Rose Gold</option><option>Black</option></select>
+          <button class="btn-add" onclick="this.textContent='Added ✓';this.style.background='#22c55e';setTimeout(()=>{this.textContent='Add';this.style.background=''},2000)">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card reveal d4">
+      <div class="product-img" style="background-image:url('https://images.pexels.com/photos/9393287/pexels-photo-9393287.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+      <div class="product-info">
+        <div class="product-name">Photo Insert</div>
+        <div class="product-variant">Acrylic · Custom Photo</div>
+        <div class="product-price">$15<small>.99</small></div>
+        <div class="product-actions">
+          <select><option>Rectangle</option><option>Circle</option><option>Oval</option></select>
+          <button class="btn-add" onclick="this.textContent='Added ✓';this.style.background='#22c55e';setTimeout(()=>{this.textContent='Add';this.style.background=''},2000)">Add</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="hero-badge">
-    <svg viewBox="0 0 150 150"><defs><path id="cp" d="M75,75 m-55,0 a55,55 0 1,1 110,0 a55,55 0 1,1 -110,0"/></defs><text font-family="Barlow Condensed,sans-serif" font-size="10.5" font-weight="600" letter-spacing="3" fill="#10b981"><textPath href="#cp">PRODUCTION · CUSTOM · STORE · </textPath></text></svg>
-    <span class="hero-badge-inner">RK</span>
-  </div>
-  <div class="scroll-hint">Scroll</div>
 </section>
-
-<div class="ticker-wrap"><div class="ticker-inner">
-  <span>Custom Keychains</span><span class="sep">✦</span><span>Online Customizer</span><span class="sep">✦</span><span>Stripe Payments</span><span class="sep">✦</span><span>Order Tracking</span><span class="sep">✦</span><span>Customer Accounts</span><span class="sep">✦</span><span>AI Chat Support</span><span class="sep">✦</span>
-  <span>Custom Keychains</span><span class="sep">✦</span><span>Online Customizer</span><span class="sep">✦</span><span>Stripe Payments</span><span class="sep">✦</span><span>Order Tracking</span><span class="sep">✦</span><span>Customer Accounts</span><span class="sep">✦</span><span>AI Chat Support</span><span class="sep">✦</span>
-</div></div>
 
 <footer>
   <div class="footer-top">
